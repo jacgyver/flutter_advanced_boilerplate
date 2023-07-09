@@ -7,6 +7,8 @@ import 'package:injectable/injectable.dart';
 final GetIt getIt = GetIt.instance;
 
 @InjectableInit(
-  ignoreUnregisteredTypes: [TokenStorage<AuthModel>],
+  initializerName: 'init', // default
+  preferRelativeImports: true, // default
+  asExtension: true, // default
 )
-Future<GetIt> configureDependencyInjection() async => $initGetIt(getIt);
+Future<GetIt> configureDependencyInjection() async => getIt.init();
