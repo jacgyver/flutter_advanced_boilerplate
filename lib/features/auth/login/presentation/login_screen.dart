@@ -18,7 +18,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:rounded_loading_button/rounded_loading_button.dart';
+// import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 @RoutePage()
@@ -39,7 +39,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final ImagePicker picker = ImagePicker();
 
-  late RoundedLoadingButtonController _btnController;
+  // late RoundedLoadingButtonController _btnController;
+  late ButtonController _btnController;
   late FormGroup _form;
 
   @override
@@ -72,8 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> selectPhoto() async {
     const maxPhotoSizeInByte = 2000000;
 
-    final photo =
-        await picker.pickImage(source: ImageSource.gallery, imageQuality: 25);
+    final photo = await picker.pickImage(source: ImageSource.gallery, imageQuality: 25);
 
     if (photo == null) {
       return;
@@ -96,8 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
       BarHelper.showAlert(
         context,
         alert: AlertModel(
-          message: context.t.core.file_picker
-              .size_warning(maxSize: maxPhotoSizeInByte / 1000000),
+          message: context.t.core.file_picker.size_warning(maxSize: maxPhotoSizeInByte / 1000000),
           type: AlertType.destructive,
         ),
       );
@@ -158,8 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (UniversalPlatform.isAndroid ||
-                      UniversalPlatform.isIOS) ...{
+                  if (UniversalPlatform.isAndroid || UniversalPlatform.isIOS) ...{
                     ReactiveFormConsumer(
                       builder: (context, formGroup, child) {
                         return MaterialSplashTappable(
@@ -167,8 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           onTap: checkPermission,
                           child: CircleAvatar(
                             radius: 50,
-                            backgroundColor: getCustomOnPrimaryColor(context)
-                                .withOpacity(0.05),
+                            backgroundColor: getCustomOnPrimaryColor(context).withOpacity(0.05),
                             backgroundImage: photo != null
                                 ? Image.file(
                                     photo!,

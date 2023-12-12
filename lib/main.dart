@@ -1,4 +1,5 @@
 import 'dart:async';
+// import 'dart:ui' as Paint;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -53,7 +54,7 @@ Future<void> main() async {
       );
 
       // This setting smoothes transition color for LinearGradient.
-      Paint.enableDithering = true;
+      // Paint.enableDithering = true;
 
       // Inits sentry for error tracking.
       await initializeSentry();
@@ -61,8 +62,7 @@ Future<void> main() async {
       // Set bloc observer and hydrated bloc storage.
       Bloc.observer = Observer();
       HydratedBloc.storage = await HydratedStorage.build(
-        storageDirectory:
-            UniversalPlatform.isWeb ? HydratedStorage.webStorageDirectory : await getApplicationDocumentsDirectory(),
+        storageDirectory: UniversalPlatform.isWeb ? HydratedStorage.webStorageDirectory : await getApplicationDocumentsDirectory(),
       );
 
       return runApp(

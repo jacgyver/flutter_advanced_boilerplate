@@ -22,6 +22,7 @@ class PostsPaginated$Query$Posts$Data extends JsonSerializable
 
   @override
   List<Object?> get props => [id, title];
+
   @override
   Map<String, dynamic> toJson() =>
       _$PostsPaginated$Query$Posts$DataToJson(this);
@@ -39,6 +40,7 @@ class PostsPaginated$Query$Posts$Meta extends JsonSerializable
 
   @override
   List<Object?> get props => [totalCount];
+
   @override
   Map<String, dynamic> toJson() =>
       _$PostsPaginated$Query$Posts$MetaToJson(this);
@@ -57,6 +59,7 @@ class PostsPaginated$Query$Posts extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [data, meta];
+
   @override
   Map<String, dynamic> toJson() => _$PostsPaginated$Query$PostsToJson(this);
 }
@@ -72,6 +75,7 @@ class PostsPaginated$Query extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [posts];
+
   @override
   Map<String, dynamic> toJson() => _$PostsPaginated$QueryToJson(this);
 }
@@ -101,6 +105,7 @@ class PageQueryOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [paginate, slice, sort, operators, search];
+
   @override
   Map<String, dynamic> toJson() => _$PageQueryOptionsToJson(this);
 }
@@ -121,6 +126,7 @@ class PaginateOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [page, limit];
+
   @override
   Map<String, dynamic> toJson() => _$PaginateOptionsToJson(this);
 }
@@ -144,6 +150,7 @@ class SliceOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [start, end, limit];
+
   @override
   Map<String, dynamic> toJson() => _$SliceOptionsToJson(this);
 }
@@ -165,6 +172,7 @@ class SortOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [field, order];
+
   @override
   Map<String, dynamic> toJson() => _$SortOptionsToJson(this);
 }
@@ -189,6 +197,7 @@ class OperatorOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [kind, field, value];
+
   @override
   Map<String, dynamic> toJson() => _$OperatorOptionsToJson(this);
 }
@@ -204,6 +213,7 @@ class SearchOptions extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [q];
+
   @override
   Map<String, dynamic> toJson() => _$SearchOptionsToJson(this);
 }
@@ -242,6 +252,7 @@ class PostsPaginatedArguments extends JsonSerializable with EquatableMixin {
 
   @override
   List<Object?> get props => [options];
+
   @override
   Map<String, dynamic> toJson() => _$PostsPaginatedArgumentsToJson(this);
 }
@@ -333,6 +344,7 @@ class PostsPaginatedQuery
 
   @override
   List<Object?> get props => [document, operationName, variables];
+
   @override
   PostsPaginated$Query parse(Map<String, dynamic> json) =>
       PostsPaginated$Query.fromJson(json);
